@@ -1,6 +1,12 @@
+import Link from 'next/link'
+import Layout from '../components/Layout'
+import Introduction from '../components/Introduction'
+import Contents from '../components/Contents'
+import Tweet from '../components/Tweet'
+
 export default () => (
-  <div>
-    <h1>Next.js</h1>
-    <div>Welcome to next.js</div>
-  </div>
+  <Layout title='top page'>
+    <Introduction />
+    <Contents />
+  </Layout>
 )
