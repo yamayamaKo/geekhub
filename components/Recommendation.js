@@ -82,15 +82,15 @@ class Recommend extends Component {
         return (
             <div>
                 <h1 className='recommendation_h1'>あなたへおすすめのコンテンツ</h1>
-                {day_one_flag && <p class='recommendation_p'>1日目</p>}
+                {day_one_flag && <p className='recommendation_p'>1日目</p>}
                 <div className='events'>
                     {day_one_recommend.map((v)=>v)}
                 </div>
-                {day_two_flag && <p class='recommendation_p'>2日目</p>}
+                {day_two_flag && <p className='recommendation_p'>2日目</p>}
                 <div className='events'>
                     {day_two_recommend.map((v)=>v)}
                 </div>
-                {day_three_flag && <p class='recommendation_p'>3日目</p>}
+                {day_three_flag && <p className='recommendation_p'>3日目</p>}
                 <div className='events'>
                     {day_three_recommend.map((v)=>v)}
                 </div>
