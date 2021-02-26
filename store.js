@@ -4,25 +4,6 @@ import firebase from 'firebase/app'
 import 'firebase/database'
 import firebaseConfig from './api_key'
 
-// const {
-//     REACT_APP_FIREBASE_API_KEY,
-//     REACT_APP_FIREBASE_AUTH_DOMAIN,
-//     REACT_APP_FIREBASE_PROJECT_ID,
-//     REACT_APP_FIREBASE_STORAGE_BUCKET,
-//     REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-//     REACT_APP_FIREBASE_APP_ID,
-//   } = process.env
-
-//   console.log(REACT_APP_FIREBASE_API_KEY)
-// var firebaseConfig = {
-//     apiKey: REACT_APP_FIREBASE_API_KEY,
-//     authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
-//     projectId: REACT_APP_FIREBASE_PROJECT_ID,
-//     storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
-//     messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-//     appId: REACT_APP_FIREBASE_APP_ID
-// }
-
 var fireapp
 try {
     firebase.initializeApp(firebaseConfig)
@@ -31,29 +12,69 @@ catch (error) {
     console.log(error.message)
 }
 
+let zeroArray = Array(65);
+zeroArray.fill(0);
 
 const initial = {
-    interest: '0101001101'
+    message:'please type message',
+    log:[],
+    login_id:-1,
+    login_user_fav:zeroArray,
 }
 
-function recommendReducer(state=initial, action) {
-    switch (action.type) {
-        case 'Add_or_Delete':
-            let new_interest_list = state.interest_list.slice()
+const db = firebase.database();
 
-            if (new_interest_list.includes(action.value)) {
-                new_interest_list = new_interest_list.filter(value=>value!=action.value)
-                return {
-                    message: 'bbb',
-                    interest_list: new_interest_list
-                }
+// レデューサ
+function Reducer(state=initial, action) {
+    switch (action.type) {
+        // お気に入りに追加時の処理
+        case 'AddFavorite':
+            let add_fav = state.login_user_fav.slice();
+            add_fav[action.num] = 1
+
+            // リストを文字列に変えた後、ユーザのお気に入り情報を更新する
+            // console.log(action.id,'action.id')
+            let add_fav_str = add_fav.join('')
+            db.ref('user_fav/'+action.id).set(add_fav_str)
+
+            return {
+                message:'AddFavorite',
+                login_user_fav:add_fav,
+                login_id:action.id,
+                log:state.log
             }
-            else {
-                new_interest_list.push(action.value)
-                return {
-                    message: 'bbb',
-                    interest_list: new_interest_list
-                }
+        // お気に入りから外したときの処理
+        case 'DeleteFavorite':
+            let del_fav = state.login_user_fav.slice()
+            del_fav[action.num] = 0
+
+            let del_fav_str = del_fav.join('');
+            db.ref('user_fav/'+state.login_id).set(del_fav_str)
+            // console.log(del_fav_str)
+
+            return {
+                message:'DeleteFavorite',
+                login_user_fav:del_fav,
+                login_id:state.login_id,
+                log:state.log
+            }
+        // ページ読み込み時にlogに追加する
+        case 'LoadPage':
+            let logs = state.log.slice()
+            let index = logs.indexOf(action.num)
+            // console.log(index, action.num)
+            if (index != -1){
+                logs.splice(index,1)
+                logs.unshift(action.num)
+            }
+            else{
+                logs.unshift(action.num)
+            }
+            return {
+                message:'LoadPage',
+                login_user_fav:state.login_user_fav,
+                login_id:state.login_id,
+                log:logs,
             }
         default:
             return state
@@ -61,5 +82,5 @@ function recommendReducer(state=initial, action) {
 }
 
 export function initStore(state=initial) {
-    return createStore(recommendReducer, state, applyMiddleware(thunkMiddleware))
+    return createStore(Reducer, state, applyMiddleware(thunkMiddleware))
 }
