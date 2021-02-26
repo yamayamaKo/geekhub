@@ -16,8 +16,8 @@ class Favorite extends Component {
 
         return (
             <div>
-                <h1 class='favorite_h1'>お気に入りしたコンテンツ</h1>
-                <div class='favorite'>
+                <h1 className='favorite_h1'>お気に入りしたコンテンツ</h1>
+                <div className='favorite'>
                     {favorite}
                 </div>
             </div>
