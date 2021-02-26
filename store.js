@@ -31,29 +31,54 @@ catch (error) {
     console.log(error.message)
 }
 
+let zeroArray = Array(65);
+zeroArray.fill(0);
 
 const initial = {
-    interest: '0101001101'
+    message:'please type message',
+    log:[],
+    login_user_fav:zeroArray,
 }
 
-function recommendReducer(state=initial, action) {
+// レデューサ
+function Reducer(state=initial, action) {
     switch (action.type) {
-        case 'Add_or_Delete':
-            let new_interest_list = state.interest_list.slice()
-
-            if (new_interest_list.includes(action.value)) {
-                new_interest_list = new_interest_list.filter(value=>value!=action.value)
-                return {
-                    message: 'bbb',
-                    interest_list: new_interest_list
-                }
+        // お気に入りに追加時の処理
+        case 'AddFavorite':
+            let add_fav = state.login_user_fav.slice();
+            add_fav[action.num] = 1
+            return {
+                message:'AddFavorite',
+                login_user_fav:add_fav,
+                log:state.log
             }
-            else {
-                new_interest_list.push(action.value)
-                return {
-                    message: 'bbb',
-                    interest_list: new_interest_list
-                }
+        // お気に入りから外したときの処理
+        case 'DeleteFavorite':
+            let del_fav = state.login_user_fav.slice()
+            del_fav[action.num] = 0
+            return {
+                message:'DeleteFavorite',
+                login_user_fav:del_fav,
+                log:state.log
+            }
+        // ページ読み込み時にlogに追加する
+        case 'LoadPage':
+            let logs = state.log.slice()
+            let index = logs.indexOf(action.num)
+            console.log(index, action.num)
+            if (index != -1){
+                // console.log(logs)
+                logs.splice(index,1)
+                // console.log(logs)
+                logs.unshift(action.num)
+            }
+            else{
+                logs.unshift(action.num)
+            }
+            return {
+                message:'LoadPage',
+                login_user_fav:state.login_user_fav,
+                log:logs,
             }
         default:
             return state
@@ -61,5 +86,5 @@ function recommendReducer(state=initial, action) {
 }
 
 export function initStore(state=initial) {
-    return createStore(recommendReducer, state, applyMiddleware(thunkMiddleware))
+    return createStore(Reducer, state, applyMiddleware(thunkMiddleware))
 }
