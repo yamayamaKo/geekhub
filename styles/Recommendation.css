@@ -1,0 +1,14 @@
+.recommendation_h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+.recommendation_p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.events {
+    display: flex;
+    justify-content: center;
+}

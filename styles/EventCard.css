@@ -1,0 +1,41 @@
+.card {
+    width: 350px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+    margin: 10px;
+}
+
+.card:hover {
+    opacity: 0.6;
+}
+
+.card-img {
+    border-radius: 5px 5px 0 0;
+    max-width: 100%;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.card-text {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.end-text {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
