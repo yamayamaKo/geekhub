@@ -1,0 +1,10 @@
+.favorite_h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+.favorite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
