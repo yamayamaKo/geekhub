@@ -15,6 +15,7 @@ const Recommend = (props) => {
     }
 
     function cosine_similarity(v, w) {
+        if (dot(v, v)==0) return 0
         if (dot(w, w)==0) return 0
         return dot(v, w)/Math.sqrt(dot(v, v)*dot(w, w))
     }
@@ -47,14 +48,17 @@ const Recommend = (props) => {
                 else return 0
             })
 
+            let new_recommend = Array(13).fill(-1)
+
             for (let i=0; i<65; i++) {
                 let session_id = order[i]['session_id']
                 if (props.login_user_fav[session_id]=='1') continue
-                if (recommend[Math.floor(session_id/5)]!=-1) continue
-                let new_recommend = recommend.slice()
+                if (new_recommend[Math.floor(session_id/5)]!=-1) continue
                 new_recommend[Math.floor(session_id/5)] = session_id
-                setRecommend(new_recommend)
             }
+
+            setRecommend(new_recommend)
+            console.log(new_recommend)
         })
 
         setIsCalculated(true)
