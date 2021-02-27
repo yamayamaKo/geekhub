@@ -2,6 +2,7 @@ import {Component} from 'react'
 import {Search, StarOutline, HelpOutline} from '@material-ui/icons'
 import Button from '@material-ui/core/Button'
 import Link from 'next/link'
+import CardComponent from './CardComponent'
 
 const Contents = () => {
 
