@@ -6,7 +6,7 @@ import EventCard from './EventCard'
 
 const Recommend = (props) => {
     const [isCalculated, setIsCalculated] = useState(false)
-    const [day_one_recommend, setDay_one_recommend] = useState([<EventCard session_id={1} />, <EventCard session_id={3} />])
+    const [day_one_recommend, setDay_one_recommend] = useState([])
     const [day_two_recommend, setDay_two_recommend] = useState([])
     const [day_three_recommend, setDay_three_recommend] = useState([])
 
@@ -23,7 +23,6 @@ const Recommend = (props) => {
     }
 
     function userBaseFiltering() {
-        console.log('aaaa')
         let user_fav = []
         let score = Array(65)
         score.fill(0)
