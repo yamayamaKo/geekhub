@@ -7,6 +7,32 @@ class EventCard extends Component {
     constructor(props) {
         super(props)
         this.state = {title: '', belong: '', author: '', day: '', time: ''}
+        let db = firebase.database()
+        let ref = db.ref('sessions/')
+
+        ref.orderByKey().on('value', (snapshot)=>{
+            let titles = []
+            let belongs = []
+            let authors = []
+            let days = []
+            let times = []
+
+            for (let i=0; i<snapshot.val().length; i++) {
+                titles.push(snapshot.val()[i].title)
+                belongs.push(snapshot.val()[i].belong)
+                authors.push(snapshot.val()[i].author)
+                days.push(snapshot.val()[i].day)
+                times.push(snapshot.val()[i].time)
+            }
+
+            this.setState({
+                title: titles[this.props.session_id],
+                belong: belongs[this.props.session_id],
+                author: authors[this.props.session_id],
+                day: days[this.props.session_id],
+                time: times[this.props.session_id]
+            })
+        })
     }
 
     goPage() {
@@ -53,26 +79,12 @@ class EventCard extends Component {
     }
     
     render() {
-        if (this.state.title=='') {
-            let db = firebase.database()
-            let ref = db.ref('sessions/'+this.props.session_id)
-
-            ref.on('value', (snapshot)=>{
-                this.setState({
-                    title: snapshot.val().title,
-                    belong: snapshot.val().belong,
-                    author: snapshot.val().author,
-                    day: snapshot.val().day,
-                    time: snapshot.val().time
-                })
-            })
-        }
-
-        let img_src = '../static/images/'+this.props.session_id+'.png'
         let flag = this.isLower()
+        let img_src =  '../static/images/'+this.props.session_id+'.png'
 
         return (
             <div>
+                {this.state.img_src}
                 <section class='card' onClick={()=>{this.goPage()}}>
                     <img class='card-img' src={img_src} alt='画像がないよ' />
                     <div class='card-content'>
