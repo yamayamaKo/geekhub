@@ -84,16 +84,15 @@ class EventCard extends Component {
 
         return (
             <div>
-                {this.state.img_src}
-                <section class='card' onClick={()=>{this.goPage()}}>
-                    <img class='card-img' src={img_src} alt='画像がないよ' />
-                    <div class='card-content'>
-                        <h1 class='card-title'>{this.state.title}</h1>
-                        <p class='card-text'>{this.state.belong}</p>
-                        <p class='card-text'>{this.state.author}</p>
-                        {flag && <p class='card-text'>{this.state.day} {this.state.time}</p>}
+                <section className='card' onClick={()=>{this.goPage()}}>
+                    <img className='card-img' src={img_src} alt='画像がないよ' />
+                    <div className='card-content'>
+                        <h1 className='card-title'>{this.state.title}</h1>
+                        <p className='card-text'>{this.state.belong}</p>
+                        <p className='card-text'>{this.state.author}</p>
+                        {flag && <p className='card-text'>{this.state.day} {this.state.time}</p>}
                     </div>
-                    {!flag && <p class='end-text'>公開終了しました</p> } 
+                    {!flag && <p className='end-text'>公開終了しました</p> } 
                 </section>
             </div>
         )

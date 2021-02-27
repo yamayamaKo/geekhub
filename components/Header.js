@@ -14,14 +14,19 @@ const Header = () => {
             </div>
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div className="text-sm lg:flex-grow">
-                <Link href="#introduction">
+                <Link href="/event">
                     <a className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4 ">
-                    Introduction
+                    検索
                     </a>
                 </Link>
-                <Link href="#contents">
+                <Link href="/favorite">
                     <a className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
-                    Contents
+                    お気に入り
+                    </a>
+                </Link>
+                <Link href="/recommendation">
+                    <a className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
+                    おすすめ
                     </a>
                 </Link>
                 </div>
