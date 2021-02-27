@@ -15,8 +15,8 @@ const Ranking = () => {
 
         ref.orderByChild('favs').limitToLast(printNum)
             .on('value', (snapshot) => {
-                Object.entries(snapshot.val()).forEach((pair)=>{
-                    ids.push(pair[0]*1)
+                snapshot.forEach((child)=>{
+                    ids.unshift(child.key*1)
                 })
                 for(let i=0;i<printNum;i++){
                     list.push(
