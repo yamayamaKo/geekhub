@@ -21,7 +21,7 @@ class Search extends Component {
         }
         
         let db = firebase.database()
-        let ref = db.ref('sessions/')
+        let ref = db.ref('sessions')
 
         ref.orderByKey().on('value', (snapshot)=>{
             let forms = []

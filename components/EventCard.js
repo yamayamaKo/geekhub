@@ -12,7 +12,7 @@ const EventCard = ({session_id}) => {
             const sessions_ = snapshot.val()
             setSessions(sessions_)
         })
-    })
+    }, [])
 
     let img_src =  '../static/images/'+session_id+'.png'
     let event_src = '/event/'+session_id
