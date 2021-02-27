@@ -21,15 +21,15 @@ const EventCard = ({session_id}) => {
         <>
             <Link href={event_src}>
                 <div>
-                    <section class='card'>
-                    <img class='w-full h-48 card-img' src={img_src} alt='画像がないよ' 
+                    <section className='card'>
+                    <img className='w-full h-48 card-img' src={img_src} alt='画像がないよ' 
                         style={{objectFit: 'contain'}} 
                         onError={(e)=>{e.target.src = '../static/images/noimage.png'}}/>
-                    {sessions.length>0 && <div class='card-content h-64'>
-                        <h1 class='card-title'>{sessions[session_id].title}</h1>
-                        <p class='card-text'>{sessions[session_id].belong}</p>
-                        <p class='card-text'>{sessions[session_id].author}</p>
-                        <p class='card-text'>{sessions[session_id].day} {sessions[session_id].time}</p>
+                    {sessions.length>0 && <div className='card-content h-64'>
+                        <h1 className='card-title'>{sessions[session_id].title}</h1>
+                        <p className='card-text'>{sessions[session_id].belong}</p>
+                        <p className='card-text'>{sessions[session_id].author}</p>
+                        <p className='card-text'>{sessions[session_id].day} {sessions[session_id].time}</p>
                     </div>}
                     </section>
                 </div>
