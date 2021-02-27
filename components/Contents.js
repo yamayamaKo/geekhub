@@ -1,8 +1,5 @@
 import {Component} from 'react'
-import {Search, StarOutline, HelpOutline} from '@material-ui/icons'
-import Button from '@material-ui/core/Button'
 import Link from 'next/link'
-import CardComponent from './CardComponent'
 
 const Contents = () => {
 
@@ -32,9 +29,9 @@ const Contents = () => {
             <div className="bg-white">
             <img src="../static/icons/star.svg" style={{objectFit:"contain"}} alt="" className="w-full h-48 sm:h-56 object-cover" />
             <div className="h-48 px-10 py-6 mb-10 text-center">
-                <div className="text-2xl font-bold text-purple-500 mb-4">お気に入り</div>
+                <div className="text-2xl font-bold text-purple-500 mb-4">マイページ</div>
                 <span className="text-sm">
-                あなたがお気に入りに登録したイベントについてここで確認することができます
+                あなたがお気に入りに登録したイベントや、過去に気になったイベントについて確認することができます
                 {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate tempore eligendi magnam distinctio molestias. Incidunt at consequuntur consequatur 
                 officiis repudiandae! Culpa cum vel tenetur itaque eius provident voluptatum similique impedit? */}
                 </span>
