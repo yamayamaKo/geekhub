@@ -21,7 +21,7 @@ const Header = () => {
                 </Link>
                 <Link href="/favorite">
                     <a className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
-                    お気に入り
+                    マイページ
                     </a>
                 </Link>
                 <Link href="/recommendation">
