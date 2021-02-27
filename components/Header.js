@@ -29,6 +29,11 @@ const Header = () => {
                     おすすめ
                     </a>
                 </Link>
+                <Link href="/ranking">
+                    <a className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4">
+                    ランキング
+                    </a>
+                </Link>
                 </div>
             </div>
             </nav>
