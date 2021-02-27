@@ -29,7 +29,7 @@ const EventCard = ({session_id}) => {
                         <h1 className='card-title'>{sessions[session_id].title}</h1>
                         {(sessions[session_id].belong === 'hoge' && sessions[session_id].type === 'study') ? null: <p className='card-text'>{sessions[session_id].belong}</p>}
                         <p className='card-text'>{sessions[session_id].author}</p>
-                        <p className='card-text'>{sessions[session_id].day} {sessions[session_id].time} {sessions[session_id].room}</p>
+                        <p className='card-text'>{sessions[session_id].day} {sessions[session_id].time}</p>
                     </div>}
                     </section>
                 </div>
