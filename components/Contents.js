@@ -66,7 +66,7 @@ const Contents = () => {
                 officiis repudiandae! Culpa cum vel tenetur itaque eius provident voluptatum similique impedit? */}
                 </span>
             </div>
-            <Link href='event'>
+            <Link href='ranking'>
             <button className="w-full text-lg h-16 text-white font-extrabold bg-purple-500 hover:opacity-60">やってみる</button>
             </Link>
             </div>            
