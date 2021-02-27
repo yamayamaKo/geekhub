@@ -21,7 +21,7 @@ const EventCard = ({session_id}) => {
         <>
             <Link href={event_src}>
                 <div>
-                    <section class='card' onClick={()=>{}}>
+                    <section class='card'>
                     <img class='w-full h-48 card-img' src={img_src} alt='画像がないよ' 
                         style={{objectFit: 'contain'}} 
                         onError={(e)=>{e.target.src = '../static/images/noimage.png'}}/>
