@@ -1,0 +1,36 @@
+.selection {
+    text-align: center;
+}
+
+.selection_h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.selection button {
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 8px;
+    margin: 3px;
+    font-size: 30px;
+}
+
+.selection button:hover {
+    opacity: 0.6;
+}
+
+.selected {
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 8px;
+    margin: 3px;
+    font-size: 30px;
+    background-color: blue;
+    color: white;
+}
+
+.display_sessions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
