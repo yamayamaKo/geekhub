@@ -57,22 +57,38 @@ function Event(props){
         delref.set(delfavs - 1);
         props.dispatch({type:'DeleteFavorite', num:router.query.id});
     }
-    // console.log(props.login_user_fav[router.query.id])
+
+    const img_src = '../../static/images/'+router.query.id+'.png';
+    const err_src = '../../static/images/noimage.png'
 
     return(
         <Layout title='event page'>
-            <h1>{data.title}</h1>
-            <h2>{data.belong}</h2>
-            <h2>{data.author}</h2>
-            <br/>
-            <h2>ROOM:{data.room}</h2>
-            <h2>DAY{data.day}, TIME:{data.time}</h2>
-            <br/>
-            {props.login_user_fav[router.query.id] === 0
-            ?
-            <button onClick={()=>addFavorite()}>お気に入りに追加</button>
-            :
-            <button onClick={()=>deleteFavorite()}>お気に入りから外す</button>}
+            <div className="text-center p-8 w-full">
+                <h1 className="text-5xl">{data.title}</h1>
+                <img className="py-10 object-center mx-auto" src={img_src} onError={(e)=>{e.target.src = err_src}}/>
+                <div className="text-3xl">
+                    <h2>{data.belong}</h2>
+                    <h2>{data.author}</h2>
+                    <br/>
+                    <h2>{data.day}, {data.time}</h2>
+                </div>
+                <div className="p-10">
+                    {props.login_user_fav[router.query.id] === 0
+                    ?
+                    <button type="button" onClick={() => addFavorite()}
+                        className="w-48 focus:outline-none text-white text-sm py-2.5 px-5 
+                        border-b-4 border-yellow-600 rounded-md bg-yellow-500 
+                        hover:bg-yellow-400">お気に入りに追加</button>
+                    // <button onClick={()=>addFavorite()}>お気に入りに追加</button>
+                    :
+                    <button type="button" onClick={() => deleteFavorite()}
+                        className="w-48 focus:outline-none text-white text-sm py-2.5 px-5 
+                        border-b-4 border-yellow-600 rounded-md bg-yellow-500 
+                        hover:bg-yellow-400">お気に入りから外す</button>
+                    // <button onClick={()=>deleteFavorite()}>お気に入りから外す</button>
+                    }
+                </div>
+            </div>
         </Layout>
     )
 }
