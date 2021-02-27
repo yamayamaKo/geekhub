@@ -33,7 +33,8 @@ catch (error) {
 
 
 const initial = {
-    interest: '0101001101'
+    login_user_id: -1,
+    login_user_fav: '10010100001010100000100111000111010110111001110000001011111111000'
 }
 
 function recommendReducer(state=initial, action) {
