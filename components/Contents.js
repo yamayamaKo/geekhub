@@ -10,10 +10,12 @@ const Contents = () => {
                 GeekHubでできること
             </div>
 
+
             <div className='grid md:grid-cols-4 gap-8 m-5 max-w-5xl m-auto py-5'>
             <div className="bg-white">
             <img src="../static/icons/search.svg" style={{objectFit:"contain"}} alt="" className="w-full h-48 sm:h-56 object-cover" />
             <div className="h-48 px-10 py-6 mb-10 text-center">
+      
                 <div className="text-2xl font-bold text-purple-500 mb-4">検索</div>
                 <span className="text-sm">
                 技育祭のイベントについて検索することができます
