@@ -88,8 +88,12 @@ class EventCard extends Component {
             <div>
                 <Link href={event_src}>
                     <section className='card'>
-                        <img className='card-img' src={img_src} style={{objectFit: 'contain'}} alt='画像がないよ' />
-                        <div className='card-content'>
+                        <img className='w-full h-48 card-img' 
+                            src={img_src} style={{objectFit: 'contain'}} 
+                            alt='画像がないよ' 
+                            onError={(e)=> e.target.src = '../static/images/noimage.png'}    
+                        />
+                        <div className='card-content h-64'>
                             <h1 className='card-title'>{this.state.title}</h1>
                             <p className='card-text'>{this.state.belong}</p>
                             <p className='card-text'>{this.state.author}</p>
