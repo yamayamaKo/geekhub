@@ -4,11 +4,12 @@ import withReduxStore from '../lib/redux-store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react/'
+import '../src/tailwind.css'
 import '../styles/globals.css'
 import '../styles/EventCard.css'
 import '../styles/Recommendation.css'
 import '../styles/Favorite.css'
-import '../src/tailwind.css'
+import '../styles/Search.css'
 
 // export default function App({ Component, pageProps }) {
 //   const store = useStore(pageProps.initialReduxState)
