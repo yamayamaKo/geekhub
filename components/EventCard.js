@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Link from 'next/link'
 import firebase from 'firebase'
 import 'firebase/storage'
 import Router from 'next/router'
@@ -81,19 +82,22 @@ class EventCard extends Component {
     render() {
         let flag = this.isLower()
         let img_src =  '../static/images/'+this.props.session_id+'.png'
+        let event_src = '/event/'+this.props.session_id;
 
         return (
             <div>
-                <section className='card' onClick={()=>{this.goPage()}}>
-                    <img className='card-img' src={img_src} alt='画像がないよ' />
-                    <div className='card-content'>
-                        <h1 className='card-title'>{this.state.title}</h1>
-                        <p className='card-text'>{this.state.belong}</p>
-                        <p className='card-text'>{this.state.author}</p>
-                        {flag && <p className='card-text'>{this.state.day} {this.state.time}</p>}
-                    </div>
-                    {!flag && <p className='end-text'>公開終了しました</p> } 
-                </section>
+                <Link href={event_src}>
+                    <section className='card'>
+                        <img className='card-img' src={img_src} style={{objectFit: 'contain'}} alt='画像がないよ' />
+                        <div className='card-content'>
+                            <h1 className='card-title'>{this.state.title}</h1>
+                            <p className='card-text'>{this.state.belong}</p>
+                            <p className='card-text'>{this.state.author}</p>
+                            {flag && <p className='card-text'>{this.state.day} {this.state.time}</p>}
+                        </div>
+                        {!flag && <p className='end-text'>公開終了しました</p> } 
+                    </section>
+                </Link>
             </div>
         )
     }
