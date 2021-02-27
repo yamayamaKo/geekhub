@@ -27,7 +27,7 @@ class Favorite extends Component {
                 <div className='pb-10 favorite'>
                     {favorite}
                 </div>
-                <h1 className='favorite_h1'>閲覧したコンテンツ</h1>
+                <h1 className='favorite_h1'>最近閲覧したコンテンツ</h1>
                 <div className='pb-10 favorite'>
                     {history}
                 </div>
