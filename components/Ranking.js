@@ -20,7 +20,7 @@ const Ranking = () => {
                 })
                 for(let i=0;i<printNum;i++){
                     list.push(
-                        <div className='mb-5' key={i}>
+                        <div className='pb-5' key={i}>
                             <h2 className='text-3xl'>{i+1}位</h2>
                             <div className='inline-block' ><EventCard session_id={ids[i]}/></div>
                         </div>
@@ -31,7 +31,7 @@ const Ranking = () => {
     },[])
     
     return(
-        <div className='text-center'>
+        <div className='text-center bg-gray-100'>
             <h1 className='text-5xl p-10'>人気のイベント</h1>
             {printList}
         </div>

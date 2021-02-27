@@ -20,7 +20,7 @@ const EventCard = ({session_id}) => {
     return (
         <>
             <Link href={event_src}>
-                <div>
+                <div key={session_id}>
                     <section className='card'>
                     <img className='w-full h-48 card-img' src={img_src} alt='画像がないよ' 
                         style={{objectFit: 'contain'}} 

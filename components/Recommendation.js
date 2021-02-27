@@ -77,18 +77,18 @@ const Recommend = (props) => {
 
     return(
 
-    <div>
-        <h1 className='recommendation_h1'>あなたへおすすめのコンテンツ</h1>
+    <div className='bg-gray-100'>
+        <h1 className='p-10 recommendation_h1'>あなたへおすすめのコンテンツ</h1>
         {day_one_recommend.length>0 && <p className='recommendation_p'>1日目</p>}
-        <div className='events'>
+        <div className='events pb-10'>
             {day_one_recommend}
         </div>
         {day_two_recommend.length>0 && <p className='recommendation_p'>2日目</p>}
-        <div className='events'>
+        <div className='events pb-10'>
             {day_two_recommend}
         </div>
         {day_three_recommend.length>0 && <p className='recommendation_p'>3日目</p>}
-        <div className='events'>
+        <div className='events pb-10'>
             {day_three_recommend}
         </div>
     </div>

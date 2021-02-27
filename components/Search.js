@@ -87,33 +87,33 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
-                <h1 class='selection_h1'>形態</h1>
-                <div class='selection'>
-                    {this.state.form=='指定なし' ? <button class='selected'>指定なし</button> : <button onClick={()=>{this.formChange('指定なし')}}>指定なし</button>}
-                    {this.state.form=='講演' ? <button class='selected'>講演</button> : <button onClick={()=>{this.formChange('講演')}}>講演</button>}
-                    {this.state.form=='勉強会' ? <button class='selected'>勉強会</button> : <button onClick={()=>{this.formChange('勉強会')}}>勉強会</button>}
+            <div className='p-10 bg-gray-100'>
+                <h1 className='selection_h1'>形態</h1>
+                <div className='selection'>
+                    {this.state.form=='指定なし' ? <button className='selected'>指定なし</button> : <button onClick={()=>{this.formChange('指定なし')}}>指定なし</button>}
+                    {this.state.form=='講演' ? <button className='selected'>講演</button> : <button onClick={()=>{this.formChange('講演')}}>講演</button>}
+                    {this.state.form=='勉強会' ? <button className='selected'>勉強会</button> : <button onClick={()=>{this.formChange('勉強会')}}>勉強会</button>}
                 </div>
 
-                <h1 class='selection_h1'>日付</h1>
-                <div class='selection'>
-                    {this.state.day=='指定なし' ? <button class='selected'>指定なし</button> : <button onClick={()=>{this.dayChange('指定なし')}}>指定なし</button>}
-                    {this.state.day=='Day1(3/11)' ? <button class='selected'>Day1(3/11)</button> : <button onClick={()=>{this.dayChange('Day1(3/11)')}}>Day1(3/11)</button>}
-                    {this.state.day=='Day2(3/12)' ? <button class='selected'>Day2(3/12)</button> : <button onClick={()=>{this.dayChange('Day2(3/12)')}}>Day2(3/12)</button>}
-                    {this.state.day=='Day3(3/13)' ? <button class='selected'>Day3(3/13)</button> : <button onClick={()=>{this.dayChange('Day3(3/13)')}}>Day3(3/13)</button>}
+                <h1 className='selection_h1'>日付</h1>
+                <div className='selection'>
+                    {this.state.day=='指定なし' ? <button className='selected'>指定なし</button> : <button onClick={()=>{this.dayChange('指定なし')}}>指定なし</button>}
+                    {this.state.day=='Day1(3/11)' ? <button className='selected'>Day1(3/11)</button> : <button onClick={()=>{this.dayChange('Day1(3/11)')}}>Day1(3/11)</button>}
+                    {this.state.day=='Day2(3/12)' ? <button className='selected'>Day2(3/12)</button> : <button onClick={()=>{this.dayChange('Day2(3/12)')}}>Day2(3/12)</button>}
+                    {this.state.day=='Day3(3/13)' ? <button className='selected'>Day3(3/13)</button> : <button onClick={()=>{this.dayChange('Day3(3/13)')}}>Day3(3/13)</button>}
                 </div>
                 
-                <h1 class='selection_h1'>時間</h1>
-                <div class='selection'>
-                    {this.state.time=='指定なし' ? <button class='selected'>指定なし</button> : <button onClick={()=>{this.timeChange('指定なし')}}>指定なし</button>}
-                    {this.state.time=='11:00~12:00' ? <button class='selected'>11:00~12:00</button> : <button onClick={()=>{this.timeChange('11:00~12:00')}}>11:00~12:00</button>}
-                    {this.state.time=='13:30~14:30' ? <button class='selected'>13:30~14:30</button> : <button onClick={()=>{this.timeChange('13:30~14:30')}}>13:30~14:30</button>}
-                    {this.state.time=='14:40~15:40' ? <button class='selected'>14:40~15:40</button> : <button onClick={()=>{this.timeChange('14:40~15:40')}}>14:40~15:40</button>}
-                    {this.state.time=='15:50~16:50' ? <button class='selected'>15:50~16:50</button> : <button onClick={()=>{this.timeChange('15:50~16:50')}}>15:50~16:50</button>}
-                    {this.state.time=='17:00~18:00' ? <button class='selected'>17:00~18:00</button> : <button onClick={()=>{this.timeChange('17:00~18:00')}}>17:00~18:00</button>}
+                <h1 className='selection_h1'>時間</h1>
+                <div className='selection'>
+                    {this.state.time=='指定なし' ? <button className='selected'>指定なし</button> : <button onClick={()=>{this.timeChange('指定なし')}}>指定なし</button>}
+                    {this.state.time=='11:00~12:00' ? <button className='selected'>11:00~12:00</button> : <button onClick={()=>{this.timeChange('11:00~12:00')}}>11:00~12:00</button>}
+                    {this.state.time=='13:30~14:30' ? <button className='selected'>13:30~14:30</button> : <button onClick={()=>{this.timeChange('13:30~14:30')}}>13:30~14:30</button>}
+                    {this.state.time=='14:40~15:40' ? <button className='selected'>14:40~15:40</button> : <button onClick={()=>{this.timeChange('14:40~15:40')}}>14:40~15:40</button>}
+                    {this.state.time=='15:50~16:50' ? <button className='selected'>15:50~16:50</button> : <button onClick={()=>{this.timeChange('15:50~16:50')}}>15:50~16:50</button>}
+                    {this.state.time=='17:00~18:00' ? <button className='selected'>17:00~18:00</button> : <button onClick={()=>{this.timeChange('17:00~18:00')}}>17:00~18:00</button>}
                 </div>
 
-                <div class='display_sessions'>
+                <div className='display_sessions'>
                     {this.state.display_sessions}
                 </div>
             </div>
