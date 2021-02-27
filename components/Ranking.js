@@ -2,13 +2,13 @@ import firebase from 'firebase'
 import { useEffect, useState } from 'react';
 import EventCard from '../components/EventCard'
 import Lib from '../static/Lib';
-import { db } from '../store'
 
 const Ranking = () => {
     const printNum = 5;
     const [printList, setPrintList] = useState([]);
 
     useEffect(() =>{
+        const db = firebase.database();
         let ids = []
         let list = []
         let ref = db.ref('sessions/')
