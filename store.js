@@ -3,7 +3,12 @@ import thunkMiddleware from 'redux-thunk'
 import firebase from 'firebase/app'
 import 'firebase/database'
 import firebaseConfig from './api_key'
+import { useMemo } from 'react'
 
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage/'
+
+let store
 var fireapp
 try {
     firebase.initializeApp(firebaseConfig)
@@ -14,7 +19,7 @@ catch (error) {
 
 let zeroArray = Array(65);
 zeroArray.fill(0);
-
+// reduxで保持する値
 const initial = {
     message:'please type message',
     log:[],
@@ -26,6 +31,7 @@ const db = firebase.database();
 
 // レデューサ
 function Reducer(state=initial, action) {
+    // console.log(state)
     switch (action.type) {
         // お気に入りに追加時の処理
         case 'AddFavorite':
@@ -81,6 +87,48 @@ function Reducer(state=initial, action) {
     }
 }
 
+// Redux Persist設定
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+
+// persist Reducer設定
+const persistedReducer = persistReducer(persistConfig, Reducer)
+
+function makeStore(state=initial){
+    return createStore(
+        persistedReducer,
+        state,
+        applyMiddleware(thunkMiddleware)
+    )
+}
+
+export const initializeStore = (preloadedState) => {
+    let _store = store ?? makeStore(preloadedState)
+
+    // After navigating to a page with an initial Redux state, merge that state
+    // with the current state in the store, and create a new store
+    if (preloadedState && store){
+        _store = makeStore({
+            ...store.getState(),
+            ...preloadedState,
+        })
+        // Reset the current store
+        store = undefined
+    }
+
+    if(typeof window === 'undefined') return _store
+    if(!store) store = _store
+
+    return _store
+}
+export function useStore(state){
+    const store = useMemo(() => initializeStore(state), [initial])
+    return store;
+}
+
+// persist前のもの
 export function initStore(state=initial) {
-    return createStore(Reducer, state, applyMiddleware(thunkMiddleware))
+    return createStore(persistedReducer, state, applyMiddleware(thunkMiddleware))
 }
