@@ -70,7 +70,7 @@ function Event(props){
                     <h2>{data.belong}</h2>
                     <h2>{data.author}</h2>
                     <br/>
-                    <h2>{data.day}, {data.time}</h2>
+                    <h2>{data.day}, {data.time}, {data.room}</h2>
                 </div>
                 <div className="p-10">
                     {props.login_user_fav[router.query.id] === 0
