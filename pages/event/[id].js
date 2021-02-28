@@ -62,7 +62,7 @@ function Event(props){
     const err_src = '../../static/images/noimage.png'
 
     return(
-        <Layout title='event page'>
+        <Layout title='Event'>
             <div className="text-center p-8 w-full">
                 <h1 className="text-5xl">{data.title}</h1>
                 <img className="py-10 object-center mx-auto" src={img_src} onError={(e)=>{

@@ -4,7 +4,7 @@ import Search from '../../components/Search'
 
 export default () => {
     return(
-        <Layout title='event page'>
+        <Layout title='Search'>
             <Search />
         </Layout>
     )

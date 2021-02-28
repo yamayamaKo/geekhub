@@ -5,7 +5,7 @@ import Contents from '../components/Contents'
 import Tweet from '../components/Tweet'
 
 export default () => (
-  <Layout title='top page'>
+  <Layout title='GeekHub'>
     {/* <Introduction /> */}
     <Contents />
   </Layout>

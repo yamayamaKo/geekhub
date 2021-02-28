@@ -8,7 +8,7 @@ class Layout extends Component{
         return(
             <div>
                 <Head>
-                    <title>{this.prosp}</title>
+                    <title>{this.props.title}</title>
                     <meta charSet='utf-8'/>
                 </Head>
                 <Header/>

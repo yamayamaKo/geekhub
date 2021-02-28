@@ -4,7 +4,7 @@ import Ranking from '../components/Ranking'
 
 export default () => {
     return(
-        <Layout title="ranking page">
+        <Layout title="Ranking">
             <Ranking />
         </Layout>
     )

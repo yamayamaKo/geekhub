@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Recommendation from '../components/Recommendation'
 
 export default () => (
-    <Layout title='recommendation'>
+    <Layout title='Recommendation'>
         <Recommendation />
     </Layout>
 )
