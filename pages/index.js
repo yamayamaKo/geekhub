@@ -6,7 +6,7 @@ import Tweet from '../components/Tweet'
 
 export default () => (
   <Layout title='GeekHub'>
-    {/* <Introduction /> */}
+    <Introduction />
     <Contents />
   </Layout>
 )

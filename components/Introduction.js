@@ -3,17 +3,38 @@ import {Component} from 'react'
 
 const Introduction = () => {
     return(
-        <div style={{backgroundImage: `url("../static/design_images/christin-hume-Hcfwew744z4-unsplash.jpg")`,
-                    backgroundSize: 'cover'}} className="max-h-full">
-        <div className="max-w-screen-xl px-8 xl:px-16 mx-auto" id="introduction"
-            >
-            <div className="text-center">
-                <div>
-                    <h1>GeekHub</h1>
-                    <p>GeekHubはあなたのお気に入りのイベントを管理し、お気に入りの情報からおすすめのイベントを紹介してくれるサイトです。</p>
+        <div className="bg-gray-200">
+            <section className="container mx-auto py-8 px-4">
+                <div className="grid lg:grid-cols-2 lg:justify-center mt-8 lg:mt-0 lg:py-32">
+                    <div className="text-center ml-10 lg:text-left lg:mb-0">
+                        <h2 className="mb-4 text-3xl lg:text-4xl">
+                            あなただけの技育祭を、GeekHubで
+                        </h2>
+                        <p className="mb-6">
+                            GeekHubは、エンジニアを目指す学生のためのテックカンファレンスである<a href='https://talent.supporterz.jp/geeksai/2021/'>技育祭</a>
+                            での体験をより良いものにするアプリです。
+                        </p>
+                    </div>
+
+                    <div className='flex justify-center lg:justify-start mx-auto lg:pl-4'>
+                        <img className='rounded-lg' src='../static/design_images/tomei.jpg' width='450' height='260' />
+                        {/* <img src='../static/design_images/example-22.svg' style={{objectFit:'contain'}} width='400' height='250'/> */}
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
+            {/* <div className='grid md:grid-cols-2 py-8 px-4'>
+                <div>
+                    <h1>あなただけの技育祭をGeekHubで</h1>
+                    <p>
+                        GeekHubは、エンジニアを目指す学生のためのテックカンファレンスである<a href='https://talent.supporterz.jp/geeksai/2021/'>技育祭</a>
+                        での体験をより良いものにするアプリです。
+                    </p>
+                </div>
+
+                <div className='justify-center mx-auto lg:pl-4'>
+                    <img src='../static/design_images/womenTopPage.jpg' width='420' height='250' />
+                </div>
+            </div> */}
         </div>
     )
 }
