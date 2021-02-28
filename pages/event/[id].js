@@ -65,7 +65,10 @@ function Event(props){
         <Layout title='event page'>
             <div className="text-center p-8 w-full">
                 <h1 className="text-5xl">{data.title}</h1>
-                <img className="py-10 object-center mx-auto" src={img_src} onError={(e)=>{e.target.src = err_src}}/>
+                <img className="py-10 object-center mx-auto" src={img_src} onError={(e)=>{
+                    e.target.src = err_src
+                    e.target.className = "py-10 object-center max-h-96 mx-auto"
+                    }}/>
                 <div className="text-3xl">
                     <h2>{data.belong}</h2>
                     <h2>{data.author}</h2>
