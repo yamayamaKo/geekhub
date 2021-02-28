@@ -17,7 +17,7 @@ const Introduction = () => {
                     </div>
 
                     <div className='flex justify-center lg:justify-start mx-auto lg:pl-4'>
-                        <img className='rounded-lg' src='../static/design_images/tomei.jpg' width='450' height='260' />
+                        <img className='rounded-lg h-auto' src='../static/design_images/tomei.jpg' width='450' height='auto' />
                         {/* <img src='../static/design_images/example-22.svg' style={{objectFit:'contain'}} width='400' height='250'/> */}
                     </div>
                 </div>
