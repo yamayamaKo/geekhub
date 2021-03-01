@@ -6,7 +6,7 @@ const Introduction = () => {
         <div className="bg-gray-200">
             <section className="container mx-auto py-8 px-4">
                 <div className="grid lg:grid-cols-2 lg:justify-center mt-8 lg:mt-0 lg:py-32">
-                    <div className="text-center ml-10 lg:text-left lg:mb-0">
+                    <div className="text-center p-3 lg:text-left lg:mb-0">
                         <h2 className="mb-4 text-3xl lg:text-4xl">
                             あなただけの技育祭を、GeekHubで
                         </h2>
@@ -17,7 +17,9 @@ const Introduction = () => {
                     </div>
 
                     <div className='flex justify-center lg:justify-start mx-auto lg:pl-4'>
-                        <img className='rounded-lg w-auto h-auto' src='../static/design_images/tomei.jpg'/>
+                        <img className='rounded-lg w-full h-48 sm:h-64' 
+                        style={{objectFit:'contain'}}
+                        src='../static/design_images/tomei.jpg'/>
                     </div>
                 </div>
             </section>
